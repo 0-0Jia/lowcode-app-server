@@ -8,7 +8,7 @@ class VersionService extends Service {
   }
   async insert (username, versionItem) {
     const { id, versionName, description, versionJson, operator, createTime, modifyTime } = versionItem;
-    const res = await this.app.mysql.query(`insert into versions (username, id, versionName, description, versionJson, operator, createTime, modifiyTime) values (${ username + ', ' + password})`, '');
+    const res = await this.app.mysql.query(`insert into versions (username, id, versionName, description, versionJson, operator, createTime, modifiyTime) values (${ username + ', ' +  id + ', '+ versionName + ', '+ description + ', '+ versionJson + ', ' + operator +  createTime + ', ' + modifyTime})`, '');
     return res;
   }
   async delete (username, versionId) {
